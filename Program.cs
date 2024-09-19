@@ -66,32 +66,29 @@ while (playAgain)
         }
     }
     Console.WriteLine("Would you like to play again?");
-    Console.WriteLine("Type 'yes' to play again or 'no' to exit the program.");
+    Console.WriteLine("Type 'yes' to play again or 'no' to exit");
 
-    bool yesNO = true;
-    while (yesNO == true)
+    bool yesNo = true;
+
+    while (yesNo == true)
     {
-        string? userInput = Console.ReadLine();
-        if (userInput?.ToLower() == "yes")
+        string userPlay = Console.ReadLine()!.Trim().ToLower();
+        if (userPlay == "yes" || userPlay == "y")
         {
-            Console.Clear();
-            Console.WriteLine("Awesome, let's go again!");
-            yesNO = false;
+            Console.WriteLine("Let's go again!");
+            yesNo = false;
         }
-        else if (userInput?.ToLower() == "no")
+        else if (userPlay == "no" || userPlay == "n")
         {
-            Console.Clear();
-            Console.WriteLine("Alright, see ya later!");
-            yesNO = false;
+            Console.WriteLine("See you next time.");
+            yesNo = false;
             playAgain = false;
         }
         else
         {
             Console.Clear();
-            Console.WriteLine("That was not a 'yes' or 'no'. Try again.");
-
+            Console.WriteLine("That was not a yes or no. Try again.");
         }
-
     }
 
 }
